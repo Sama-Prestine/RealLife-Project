@@ -1,46 +1,61 @@
    
 describe('My First Test', () => {
+     
+     let Data ;
+     before( ()=>{
+          cy.fixture('Orangehrm.json').then((Userdata)=>{
+               Data = Userdata;
+           
+          })
 
-  it.skip('Verifying Login Page. -Positive', () => {
-    cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+     })
 
-   // cy.url().should('include','orangehrmlive.com')
-   // cy.url().should('eq','https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
-   // cy.url().should('contain','orangehrmlive')
-   // cy.title().should('eq','OrangeHRM')
+  it('Verifying Login Page. -Positive', () => {
+    cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+  
+    cy.url().should('include', Data.Include)
+            .and('eq', Data.Url)
+            .and('contain', Data.Logo1)
+            .and('not.contain',Data.Logo2)
 
-    cy.url().should('include','orangehrmlive.com')
-            .and('eq','https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
-            .and('contain','orangehrmlive')
-            .and('not.contain','Webpagelive')
-
-    cy.get('.orangehrm-login-branding > img').should('exist')
+    cy.get(Data.BrandSel ).should('exist')
             .and('be.visible')
 
-    cy.title().should('eq','OrangeHRM')
+    cy.title().should('eq',Data.Title)
               .should('not.include','live.com')
           
          cy.wait(4000)
 
-    cy.get('input[placeholder=Username').type('Admin')
-    cy.get('input[placeholder=Username').should('have.value','Admin')
+    cy.get(Data.UsernameSel).type(Data.Username);
+    cy.get(Data.UsernameSel).should('have.value',Data.Username);
          cy.wait(4000)
-    cy.get('input[placeholder=Password').type('admin123')
-    cy.get('input[placeholder=Password').should('have.value','admin123')  
+
+    cy.get(Data.PasswordSel).type(Data.Password);
+    cy.get(Data.PasswordSel).should('have.value',Data.Password);  
          cy.wait(4000)
-    cy.get('button[type=submit').click()
+
+    cy.get(Data.ButtonSel).click()
          cy.wait(4000)
     
-    let expName = "Bob Tester";
+    let expName = "Test 34 Kondem";
 
-    cy.get('.oxd-userdropdown-name').then(  (x) => {
+    cy.get(Data.ActNameSel).then(  (x) => {
       let actName = x.text()
       expect (actName).to.equal(expName)
-      expect (actName).to.not.equal(expName)
-    })
+          cy.wait(4000)
+
+      cy.get('.oxd-main-menu-item.active').click()
+      cy.get(' :nth-child(6) > .oxd-main-menu-item').click()
+      expect (actName).to.not.equal(expName) 
+      cy.wait(4000)
 
 
-  })
+     
+
+    
+}) 
+
+
 
   it.skip('Verifying Login Page. -Negative', () => {
     cy.visit("https://opensource-demo.orangehrmlive.com/")
@@ -49,7 +64,7 @@ describe('My First Test', () => {
 
   
 
-  it('Verifying Multiple Functions', () => {
+  it.skip('Verifying Multiple Functions', () => {
     cy.visit("https://testautomationpractice.blogspot.com/")
          cy.wait(4000)
 
@@ -80,5 +95,7 @@ describe('My First Test', () => {
 
 
   })
+
+})
 
 })

@@ -1,0 +1,73 @@
+
+[
+{
+
+   "Url" : "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+   "Logo1" : "orangehrmlive",
+   "Logo2" : "Webpagelive",
+   "Include" : "orangehrmlive.com",
+   "BrandSel" : ".orangehrm-login-branding > img",
+   "Title" : "OrangeHRM",
+
+   "UsernameSel" : "input[placeholder=Username",
+   "Username" : "Admin",
+   "PasswordSel" : "input[placeholder=Password",
+   "Password" : "admin123",
+   "ButtonSel" : "button[type='submit']",
+   "ActNameSel" : ".oxd-userdropdown-name",
+   "MyInfoSel" : " :nth-child(6) > .oxd-main-menu-item",
+   "Expected" : "PIM",
+   "Logout1Sel" : ".oxd-icon.bi-caret-down-fill.oxd-userdropdown-icon",
+    "Logout2Sel" : " :nth-child(4) > .oxd-userdropdown-link",
+    "FirstNameSel" : "input[placeholder='First Name']",
+    "FirstName" : "Sama",
+    "MiddleNameSel" : "input[placeholder='Middle Name']",
+    "MiddleName" : "Prestine",
+    "LastNameSel" : "input[placeholder='Last Name']",
+    "LastName" : "QA Engineer",
+    "IDSel" : ".oxd-input oxd-input--active",
+    "ID"  : " 3813",
+    "OtherIDSel" : ".oxd-input.oxd-input--focus",
+    "OtherID"  : " 53539554"
+    
+},
+{
+
+   "Url" : "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+   "Logo1" : "orangehrmlive",
+   "Logo2" : "Webpagelive",
+   "Include" : "orangehrmlive.com",
+   "BrandSel" : ".orangehrm-login-branding > img",
+   "Title" : "OrangeHRM",
+
+   "UsernameSel" : "input[placeholder=Username",
+   "Username" : "Prestine",
+   "PasswordSel" : "input[placeholder=Password",
+   "Password" : "admin123",
+   "ButtonSel" : "button[type='submit']",
+   "ActNameSel" : ".oxd-userdropdown-name",
+   "Expected2" : "Invalid credentials",
+    "ExpectedSel2" : ".oxd-text.oxd-text--p.oxd-alert-content-text"
+    
+    
+},
+{
+   "Url" : "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+   "Logo1" : "orangehrmlive",
+   "Logo2" : "Webpagelive",
+   "Include" : "orangehrmlive.com",
+   "BrandSel" : ".orangehrm-login-branding > img",
+   "Title" : "OrangeHRM",
+
+       
+   "UsernameSel" : "input[placeholder=Username",
+   "Username" : "Admin",
+   "PasswordSel" : "input[placeholder=Password",
+   "Password" : "4643123",
+   "ButtonSel" : "button[type='submit']",
+   "ActNameSel" : ".oxd-userdropdown-name",
+   "Expected" : "Invalid credentials",
+    "ExpectedSel" : ".oxd-text.oxd-text--p.oxd-alert-content-text"
+}
+
+]
