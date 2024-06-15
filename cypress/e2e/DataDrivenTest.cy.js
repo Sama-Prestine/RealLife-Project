@@ -48,8 +48,8 @@ describe('Data Driven Test', () => {
                          cy.wait(4000)
 
 
-                         cy.get(Data.LastNameSel).clear()
-                              .click()
+                         cy.get(Data.LastNameSel).click()
+                              .clear()
                               .type(Data.LastName);
                          cy.wait(4000)
 
@@ -63,6 +63,20 @@ describe('Data Driven Test', () => {
                               .type(Data.OtherID);
                          cy.wait(4000)
 
+                         cy.get(Data.DriverLisSel).clear()
+                              .type(Data.DriverLisNum)
+                         cy.get(Data.LisensDateSel).clear()
+                               .type(Data.LisensDate)
+                         cy.get(Data.NationalitySel).click()
+                         cy.get(Data.NationalitySel2).click()
+                         cy.get(Data.GenderSel).click()
+
+                         cy.get(Data.MaritalSel).click()
+                         cy.get(Data.MariedSel).click()
+                         cy.get(Data.SaveSel).click()
+
+
+
 
                          let expName = "Sama Prestine";
 
@@ -74,9 +88,12 @@ describe('Data Driven Test', () => {
                               expect(actName).to.not.equal(expName)
                               cy.wait(4000)
 
+                             
                               cy.get(Data.Logout1Sel).click()
                               cy.wait(4000)
                               cy.get(Data.Logout2Sel).click()
+
+                             
 
                          })
 

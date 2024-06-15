@@ -7,7 +7,7 @@ describe('My First Test', () => {
                Data = Userdata;
            
           })
-
+clear
      })
 
   it('Verifying Login Page. -Positive', () => {
@@ -57,14 +57,14 @@ describe('My First Test', () => {
 
 
 
-  it.skip('Verifying Login Page. -Negative', () => {
+  it('Verifying Login Page. -Negative', () => {
     cy.visit("https://opensource-demo.orangehrmlive.com/")
     cy.title().should('eq','OrangeHRM123')
   })
 
   
 
-  it.skip('Verifying Multiple Functions', () => {
+  it('Verifying Multiple Functions', () => {
     cy.visit("https://testautomationpractice.blogspot.com/")
          cy.wait(4000)
 
